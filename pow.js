@@ -11,12 +11,16 @@
 function pow(a, n) {
   var b = a;
   b = Math.abs(b);
-  if (typeof(n) === 'number') {
-    for (var i = 1; i < n; ++i) {
-      b *= a;
+  if (typeof(a) === 'number' && typeof(n) === 'number') {
+    if(a > 0 && n > 0){
+      for (var i = 1; i < n; ++i) {
+        b *= a;
+      }
+    } else if (n===0) {
+      return b=1;
     }
     return b;
-  } else {
+    } else {
     console.error('Должно быть число!');
   }
 }
